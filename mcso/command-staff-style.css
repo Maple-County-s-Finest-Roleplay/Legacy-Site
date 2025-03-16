@@ -1,0 +1,222 @@
+/* Basic styling */
+body {
+    font-family: 'Baloo-Regular', mulish;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c5a86b;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar-brand a {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    margin: 0 10px;
+}
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-links li {
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+    }
+    .navbar-links.active {
+        display: flex;
+    }
+    .navbar-toggle {
+        display: flex;
+    }
+}
+
+/* Header styling with a gradient background */
+header {
+    background: #c5a86b;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* Main content styling */
+.content {
+    padding: 30px;
+    max-width: 1200px; /* Adjusted max-width for larger layout */
+    margin: 0 auto;
+}
+
+/* Server description styling */
+.description {
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+.description2 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: white;
+    text-align: center;
+}
+
+/* Three-column layout styling */
+.three-column-layout {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch; /* Ensuring items are stretched to the same height */
+    padding: 20px;
+}
+
+.four-column-layout {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch; /* Ensuring items are stretched to the same height */
+    padding: 20px;
+}
+
+.section {
+    text-align: center;
+    margin: 20px;
+    flex: 1; /* Ensure equal spacing */
+    max-width: 300px; /* Adjusted width to fit content better */
+}
+
+.section h3 {
+    color: white
+}
+
+.lyle-section { /* Targeting sheriff section */
+    max-width: 350px; /* Adjusted max-width for sheriff section */
+}
+
+.lyle-section .big-heading {
+    font-size: 2em; /* Increased font size for sheriff section */
+}
+
+.lyle-section .small-heading {
+    font-size: 1.5em; /* Increased font size for sheriff section */
+}
+
+.lyle-section .image { /* Targeting image in sheriff section */
+    max-width: 100%; /* Adjusted image size */
+    height: auto;
+    margin-bottom: 10px; /* Added margin for spacing */
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.big-heading {
+    color: white;
+    font-size: 1.5em; /* Adjusted font size */
+    margin: 10px 0;
+}
+
+.small-heading {
+    color: white;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.horizontal-line {
+    background-color: #333; /* Dark grey color */
+    height: 2px; /* Height of the line */
+    width: calc(100% - 400px); /* Width of the line with margin */
+    margin: 0 auto; /* Center the line horizontally */
+    margin-top: 0px; /* Adjust the top margin as needed */
+}
+
+
+/* Footer styling */
+footer {
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .three-column-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .social-links ul li {
+        margin-right: 10px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}

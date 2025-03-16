@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ban Appeal - Maple County's Finest Roleplay</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn.maplecountysfinestroleplay.xyz/mcfrp-logo.png">
+    <link rel="stylesheet" type="text/css" href="https://appeal.maplecountysfinestroleplay.xyz/appeal.css">
+    <style>
+        body {
+            font-family: 'Baloo-Regular', mulish;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+        }
+
+        header {
+            background: linear-gradient(90deg, #00a2ff, #002fff);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 0 0 20px 20px;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        .content {
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .appeal-form {
+            color: white;
+            background: #242222;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .appeal-form h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .appeal-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .appeal-form input, .appeal-form textarea {
+            width: calc(100% - 20px);
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #1c1c1c;
+            color: white;
+        }
+
+        .appeal-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #00a2ff;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .appeal-form input[type="submit"]:hover {
+            background: #0084cc;
+        }
+
+        footer {
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 20px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .appeal-form {
+                padding: 15px;
+            }
+
+            footer {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Maple County's Finest Roleplay - Ban Appeal Form</h1>
+        <p>If you believe you were banned unfairly, please fill out this form to appeal.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Appeal Form -->
+        <section class="appeal-form">
+            <h2>Submit Your Appeal</h2>
+            <form id="banAppealForm">
+                <label for="username">Discord Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="userid">Discord User ID:</label>
+                <input type="text" id="userid" name="userid" required>
+                
+                <label for="reason">Ban Reason:</label>
+                <input type="text" id="reason" name="reason" required>
+
+                <label for="reason">Do you think there was any misconduct involved in this ban?</label>
+                <input type="text" id="reason" name="misconduct" required>
+                
+                <label for="appeal">Why do you believe you should be unbanned?</label>
+                <textarea id="appeal" name="appeal" rows="5" required></textarea>
+                
+                <input type="submit" value="Submit Appeal">
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Maple County's Finest Roleplay & TheDylanator. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('banAppealForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = {
+                username: document.getElementById('username').value,
+                userid: document.getElementById('userid').value,
+                reason: document.getElementById('reason').value,
+                misconduct: document.getElementById('misconduct').value,
+                appeal: document.getElementById('appeal').value,
+            };
+
+            const embed = {
+                title: "New Ban Appeal",
+                color: 3447003,
+                fields: [
+                    {
+                        name: "Discord Username",
+                        value: formData.username,
+                        inline: true
+                    },
+                    {
+                        name: "Discord User ID",
+                        value: formData.userid,
+                        inline: true
+                    },
+                    {
+                        name: "Ban Reason",
+                        value: formData.reason,
+                        inline: false
+                    },
+                    {
+                        name: "Do you think there was any misconduct involved in this ban?",
+                        value: formData.misconduct,
+                        inline: false
+                    },
+                    {
+                        name: "Why do you believe you should be unbanned?",
+                        value: formData.appeal,
+                        inline: false
+                    }
+                ],
+                timestamp: new Date(),
+            };
+
+            try {
+                const response = await fetch('https://discord.com/api/webhooks/1258965647656882186/ig_8CfDc0YrJw5mP4s2NbIErdniawiiKmnbyLbH5NzDCtjIqBK008TGjRShOCMS6Phc_', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ embeds: [embed] }),
+                });
+
+                if (response.ok) {
+                    alert('Your appeal has been submitted successfully.');
+                    document.getElementById('banAppealForm').reset();
+                } else if (response.status >= 400 && response.status < 500) {
+                    alert('Client error occurred. Please check your input and try again.');
+                } else if (response.status >= 500) {
+                    alert('Server error occurred. Please try again later.');
+                } else {
+                    alert('Unexpected error occurred. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error submitting appeal:', error);
+                alert('An error occurred while submitting your appeal.');
+            }
+        });
+    </script>
+</body>
+</html>

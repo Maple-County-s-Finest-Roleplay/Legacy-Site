@@ -1,0 +1,102 @@
+
+body {
+    font-family: 'Baloo-Regular', mulish;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+}
+
+header {
+    background: linear-gradient(90deg, #00a2ff, #002fff);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+.content {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.appeal-form {
+    color: white;
+    background: #242222;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.appeal-form h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.appeal-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.appeal-form input, .appeal-form textarea {
+    width: calc(100% - 20px);
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #1c1c1c;
+    color: white;
+}
+
+.appeal-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: #00a2ff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.appeal-form input[type="submit"]:hover {
+    background: #0084cc;
+}
+
+footer {
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .appeal-form {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}

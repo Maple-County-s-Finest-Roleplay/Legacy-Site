@@ -1,0 +1,95 @@
+/* Basic styling */
+body {
+    font-family: 'Baloo-Regular', mulish;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+}
+
+/* Header styling with a gradient background */
+header {
+    background: linear-gradient(90deg, #00a2ff, #002fff);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* Main content styling */
+.content {
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Error message styling */
+.error-message {
+    text-align: center;
+    color: white;
+    background: #242222;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.error-message h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.error-message p {
+    margin: 10px 0;
+}
+
+.error-message .home-link, .error-message .ticket-link {
+    display: inline-block;
+    background: #00a2ff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.error-message .home-link:hover, .error-message .ticket-link:hover {
+    background: #002fff;
+}
+
+/* Footer styling */
+footer {
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .error-message {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}
